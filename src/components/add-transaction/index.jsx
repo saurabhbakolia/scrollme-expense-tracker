@@ -50,6 +50,7 @@ const TransactionForm = ({ onClose, isOpen }) => {
                                 colorScheme='blue'
                                 name='type'
                                 onChange={handleFormChange}
+                                mr={"4"}
                             >
                                 Expense
                             </Radio>
