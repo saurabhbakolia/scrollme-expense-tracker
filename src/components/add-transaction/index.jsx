@@ -47,7 +47,7 @@ const TransactionForm = ({ onClose, isOpen }) => {
                             <Radio
                                 checked={formData.type === 'income'}
                                 value='expense'
-                                colorScheme='blue'
+                                colorScheme='red'
                                 name='type'
                                 onChange={handleFormChange}
                                 mr={"4"}
@@ -56,7 +56,7 @@ const TransactionForm = ({ onClose, isOpen }) => {
                             </Radio>
                             <Radio
                                 value="income"
-                                colorScheme='red'
+                                colorScheme='blue'
                                 name='type'
                                 checked={formData.type === 'expense'}
                                 onChange={handleFormChange}
