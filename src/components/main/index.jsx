@@ -46,7 +46,7 @@ const Main = () => {
             />
             <Flex w={'full'} alignItems={"flex-start"} justifyContent={"space-evenly"} flexDirection={["column", "column", "column", "row", "row"]}>
                 <ExpenseView
-                    data={allTransactions.filter((item) => item.type === "income")}
+                    data={allTransactions.filter((item) => item.type === "expense")}
                     type={"expense"}
                 />
                 <ExpenseView
