@@ -1,8 +1,9 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react'
 import React from 'react';
 import TransactionForm from '../add-transaction';
+import TransactionChartSummary from '../chart';
 
-const index = ({ onClose, isOpen }) => {
+const index = ({ onClose, isOpen, totalExpense, totalIncome }) => {
     return (
         <Box
             p={"6"}
@@ -35,7 +36,7 @@ const index = ({ onClose, isOpen }) => {
                     mr={"2"}
                 >
                     <Heading size={"md"} mb={"4"} color={"gray.600"}>
-                        Balance is 100
+                        Balance is ${totalIncome - totalExpense}
                     </Heading>
                     <Flex
                         justifyContent={"space-evenly"}
@@ -49,7 +50,7 @@ const index = ({ onClose, isOpen }) => {
                         <Flex
                             flexDirection={"column"}
                         >
-                            <Heading color={"gray.700"}>$ 100</Heading>
+                            <Heading color={"gray.700"}>$ {totalIncome}</Heading>
                             <Text color={"gray.600"}>Total Income</Text>
                         </Flex>
                     </Flex>
@@ -65,7 +66,7 @@ const index = ({ onClose, isOpen }) => {
                         <Flex
                             flexDirection={"column"}
                         >
-                            <Heading color={"gray.700"}>$ 100</Heading>
+                            <Heading color={"gray.700"}>$ {totalExpense}</Heading>
                             <Text color={"gray.600"}>Total Expense</Text>
                         </Flex>
                     </Flex>
@@ -81,7 +82,7 @@ const index = ({ onClose, isOpen }) => {
                     alignItems={"center"}
                     justifyContent={"center"}
                 >
-                    <Heading>Chart</Heading>
+                    <Heading><TransactionChartSummary expense={totalExpense} income={totalIncome} /></Heading>
                 </Box>
             </Flex>
             <TransactionForm onClose={onClose} isOpen={isOpen} />
